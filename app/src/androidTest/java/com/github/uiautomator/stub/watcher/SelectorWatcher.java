@@ -23,9 +23,9 @@
 
 package com.github.uiautomator.stub.watcher;
 
-import android.support.test.uiautomator.UiObject;
-import android.support.test.uiautomator.UiSelector;
-import android.support.test.uiautomator.UiWatcher;
+import android.support.test.wqhyy.UiObject;
+import android.support.test.wqhyy.UiSelector;
+import android.support.test.wqhyy.UiWatcher;
 
 /**
  * Created with IntelliJ IDEA.

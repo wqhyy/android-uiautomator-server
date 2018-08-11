@@ -24,11 +24,11 @@
 package com.github.uiautomator.stub;
 
 import android.support.test.InstrumentationRegistry;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiObject;
-import android.support.test.uiautomator.UiObject2;
-import android.support.test.uiautomator.UiObjectNotFoundException;
-import android.support.test.uiautomator.UiSelector;
+import android.support.test.wqhyy.UiDevice;
+import android.support.test.wqhyy.UiObject;
+import android.support.test.wqhyy.UiObject2;
+import android.support.test.wqhyy.UiObjectNotFoundException;
+import android.support.test.wqhyy.UiSelector;
 
 public class ObjInfo {
 

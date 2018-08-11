@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.app.UiAutomation;
 import android.os.Parcelable;
 import android.support.test.InstrumentationRegistry;
-import android.support.test.uiautomator.UiDevice;
+import android.support.test.wqhyy.UiDevice;
 import android.view.accessibility.AccessibilityEvent;
 
 import java.util.HashSet;

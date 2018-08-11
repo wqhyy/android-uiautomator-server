@@ -24,11 +24,11 @@
 package com.github.uiautomator.stub;
 
 import android.support.test.InstrumentationRegistry;
-import android.support.test.uiautomator.By;
-import android.support.test.uiautomator.BySelector;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiObject2;
-import android.support.test.uiautomator.UiSelector;
+import android.support.test.wqhyy.By;
+import android.support.test.wqhyy.BySelector;
+import android.support.test.wqhyy.UiDevice;
+import android.support.test.wqhyy.UiObject2;
+import android.support.test.wqhyy.UiSelector;
 
 import java.util.regex.Pattern;
 

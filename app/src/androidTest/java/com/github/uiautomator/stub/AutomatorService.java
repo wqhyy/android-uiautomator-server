@@ -24,7 +24,7 @@
 package com.github.uiautomator.stub;
 
 import android.os.RemoteException;
-import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.wqhyy.UiObjectNotFoundException;
 
 import com.googlecode.jsonrpc4j.JsonRpcError;
 import com.googlecode.jsonrpc4j.JsonRpcErrors;
@@ -557,7 +557,7 @@ public interface AutomatorService {
      * @param percent expect value: percent >= 0.0F && percent <= 1.0F,The length of the swipe as a percentage of this object's size.
      * @param steps   indicates the number of injected move steps into the system. Steps are injected about 5ms apart. So a 100 steps may take about 1/2 second to complete.
      * @return true of successful
-     * @throws android.support.test.uiautomator.UiObjectNotFoundException
+     * @throws UiObjectNotFoundException
      */
     @JsonRpcErrors({@JsonRpcError(exception = UiObjectNotFoundException.class, code = ERROR_CODE_BASE - 2)})
     boolean swipe(Selector obj, String dir, float percent, int steps) throws UiObjectNotFoundException;

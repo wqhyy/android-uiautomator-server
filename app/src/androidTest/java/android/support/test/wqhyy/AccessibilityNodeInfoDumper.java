@@ -16,6 +16,7 @@
 
 package android.support.test.wqhyy;
 
+import android.graphics.Rect;
 import android.util.Log;
 import android.util.Xml;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -56,26 +57,29 @@ class AccessibilityNodeInfoDumper {
     private static void dumpNodeRec(AccessibilityNodeInfo node, XmlSerializer serializer, int index,
                                     int width, int height) throws IOException {
         serializer.startTag("", "node");
-        if (!nafExcludedClass(node) && !nafCheck(node))
-            serializer.attribute("", "NAF", Boolean.toString(true));
-        serializer.attribute("", "index", Integer.toString(index));
-        serializer.attribute("", "text", safeCharSeqToString(node.getText()));
-        serializer.attribute("", "resource-id", safeCharSeqToString(node.getViewIdResourceName()));
-        serializer.attribute("", "class", safeCharSeqToString(node.getClassName()));
-        serializer.attribute("", "package", safeCharSeqToString(node.getPackageName()));
-        serializer.attribute("", "content-desc", safeCharSeqToString(node.getContentDescription()));
-        serializer.attribute("", "checkable", Boolean.toString(node.isCheckable()));
-        serializer.attribute("", "checked", Boolean.toString(node.isChecked()));
-        serializer.attribute("", "clickable", Boolean.toString(node.isClickable()));
-        serializer.attribute("", "enabled", Boolean.toString(node.isEnabled()));
-        serializer.attribute("", "focusable", Boolean.toString(node.isFocusable()));
-        serializer.attribute("", "focused", Boolean.toString(node.isFocused()));
-        serializer.attribute("", "scrollable", Boolean.toString(node.isScrollable()));
-        serializer.attribute("", "long-clickable", Boolean.toString(node.isLongClickable()));
-        serializer.attribute("", "password", Boolean.toString(node.isPassword()));
-        serializer.attribute("", "selected", Boolean.toString(node.isSelected()));
-        serializer.attribute("", "bounds", android.support.test.wqhyy.AccessibilityNodeInfoHelper.getVisibleBoundsInScreen(
-                node, width, height).toShortString());
+        Rect rect = android.support.test.wqhyy.AccessibilityNodeInfoHelper.getVisibleBoundsInScreen(node, width, height);
+
+        if (rect.left<width && rect.top<height){
+            if (!nafExcludedClass(node) && !nafCheck(node))
+                serializer.attribute("", "NAF", Boolean.toString(true));
+            serializer.attribute("", "index", Integer.toString(index));
+            serializer.attribute("", "text", safeCharSeqToString(node.getText()));
+            serializer.attribute("", "resource-id", safeCharSeqToString(node.getViewIdResourceName()));
+            serializer.attribute("", "class", safeCharSeqToString(node.getClassName()));
+            serializer.attribute("", "package", safeCharSeqToString(node.getPackageName()));
+            serializer.attribute("", "content-desc", safeCharSeqToString(node.getContentDescription()));
+            serializer.attribute("", "checkable", Boolean.toString(node.isCheckable()));
+            serializer.attribute("", "checked", Boolean.toString(node.isChecked()));
+            serializer.attribute("", "clickable", Boolean.toString(node.isClickable()));
+            serializer.attribute("", "enabled", Boolean.toString(node.isEnabled()));
+            serializer.attribute("", "focusable", Boolean.toString(node.isFocusable()));
+            serializer.attribute("", "focused", Boolean.toString(node.isFocused()));
+            serializer.attribute("", "scrollable", Boolean.toString(node.isScrollable()));
+            serializer.attribute("", "long-clickable", Boolean.toString(node.isLongClickable()));
+            serializer.attribute("", "password", Boolean.toString(node.isPassword()));
+            serializer.attribute("", "selected", Boolean.toString(node.isSelected()));
+            serializer.attribute("", "bounds", rect.toShortString());
+        }
         int count = node.getChildCount();
         for (int i = 0; i < count; i++) {
             AccessibilityNodeInfo child = node.getChild(i);

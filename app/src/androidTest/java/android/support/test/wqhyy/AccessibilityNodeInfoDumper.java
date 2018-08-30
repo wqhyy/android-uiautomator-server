@@ -56,6 +56,9 @@ class AccessibilityNodeInfoDumper {
 
     private static void dumpNodeRec(AccessibilityNodeInfo node, XmlSerializer serializer, int index,
                                     int width, int height) throws IOException {
+        if (node == null){
+            return;
+        }
         serializer.startTag("", "node");
         Rect rect = android.support.test.wqhyy.AccessibilityNodeInfoHelper.getVisibleBoundsInScreen(node, width, height);
 

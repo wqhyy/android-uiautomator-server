@@ -517,7 +517,9 @@ public class UiDevice implements android.support.test.wqhyy.Searchable {
         android.support.test.wqhyy.Tracer.trace();
         Display display = getAutomatorBridge().getDefaultDisplay();
         Point p = new Point();
-        display.getSize(p);
+        display.getRealSize(p);
+//        Point p = new Point();
+//        display.getSize(p);
         return p.x;
     }
 
@@ -531,7 +533,9 @@ public class UiDevice implements android.support.test.wqhyy.Searchable {
         android.support.test.wqhyy.Tracer.trace();
         Display display = getAutomatorBridge().getDefaultDisplay();
         Point p = new Point();
-        display.getSize(p);
+        display.getRealSize(p);
+//        Point p = new Point();
+//        display.getSize(p);
         return p.y;
     }
 
